@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			html,
+			body {
+				height: 100%;
+			}
+			body {
+				font-family: monospace;
+				text-align: center;
+				perspective: 1000px;
+				overflow: hidden;
+				background-image: url("stars.jpg");
+				background-size: cover;
+				position: relative;
+				padding: 0;
+				margin: 0;
+			}
+			.mask {
+				width: 100%;
+				height: 25%;
+			}
+			.mask-img {
+				position: absolute;
+				top: 0;
+				left: 0;
+				background-image: url("stars.jpg");
+				background-size: cover;
+				-webkit-mask-image: linear-gradient(black 55%, transparent);
+				mask-image: linear-gradient(black 55%, transparent);
+				height: 15%;
+				width: 100%;
+				object-position: top;
+				object-fit: cover;
+			}
+			h1 {
+				color: white;
+				font-size: 5rem;
+			}
+			h2 {
+				color: white;
+				font-size: 3rem;
+			}
+			p {
+				color: white;
+			}
+			.opening-crawl {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%) rotateX(50deg) translateY(80%);
+				transform-origin: 50%, 50%;
+				width: 60%;
+				padding: 1em;
+			}
+			.opening-crawl p {
+				text-align: justify;
+				font-size: 2em;
+				text-indent: 2em;
+				line-height: 1.5;
+			}
+		</style>
+		<script>
+			window.addEventListener("load", function () {
+				var audio = document.querySelector("audio");
+				var openingCrawl = document.querySelector(".opening-crawl");
+				openingCrawl.style.transition = `transform ${audio.duration || 10}s linear`;
+				openingCrawl.style.transform = "translate(-50%, -50%) rotateX(50deg) translateY(-150%)";
+				audio.play();
+			});
+		</script>
+	</head>
+	<body>
+		<div class="opening-crawl">
+			<audio src="star-wars-intro.mp3"></audio>
+			<h1>Episode IV</h1>
+			<h2>A New Hope</h2>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus sit amet lorem vehicula, a volutpat ante tempus.
+				Suspendisse potenti. Suspendisse euismod, nisl sit amet eleifend maximus, quam nulla placerat nisi, et egestas mi metus in est. Etiam
+				luctus sem id iaculis placerat. Morbi vitae nisi vel augue mollis faucibus. Morbi dapibus risus vel nisi placerat, sit amet congue sem
+				egestas. In hac habitasse platea dictumst. Nunc congue libero quis est convallis, in pharetra massa commodo.
+			</p>
+			<p>
+				Ut at enim ut dolor pellentesque egestas. Duis accumsan dolor nec ante faucibus, quis interdum orci vehicula. Pellentesque eu risus
+				nibh. Donec rhoncus augue nec ex ultricies, in viverra tellus viverra. Nullam dapibus, ipsum quis volutpat porttitor, Lorem ipsum
+				dolor sit amet consectetur adipisicing elit. Ratione error, rem ipsum, voluptatibus culpa praesentium ut quia exercitationem
+				asperiores dolorum consequuntur repellat quisquam vitae doloribus! Error velit illo doloremque voluptatem alias facilis in ducimus
+				recusandae facere inventore asperiores incidunt vitae quae officia repellendus voluptas, impedit ullam nihil aut eaque maxime. Dolor
+				optio saepe corporis, quia accusamus sapiente aperiam dicta incidunt beatae aliquid placeat repellendus perferendis quasi quos quidem
+				possimus. Maxime nesciunt blanditiis voluptatibus, adipisci perspiciatis velit quisquam aperiam autem, maiores vitae aspernatur
+				aliquam, incidunt necessitatibus ex eveniet! Quae, molestiae vero, accusantium aspernatur sit in, praesentium quasi facere dolorem
+				sunt necessitatibus!
+			</p>
+			<p>
+				Ut at enim ut dolor pellentesque egestas. Duis accumsan dolor nec ante faucibus, quis interdum orci vehicula. Pellentesque eu risus
+				nibh. Donec rhoncus augue nec ex ultricies, in viverra tellus viverra. Nullam dapibus, ipsum quis volutpat porttitor, Lorem ipsum
+				dolor sit amet consectetur adipisicing elit. Ratione error, rem ipsum, voluptatibus culpa praesentium ut quia exercitationem
+				asperiores dolorum consequuntur repellat quisquam vitae doloribus! Error velit illo doloremque voluptatem alias facilis in ducimus
+				recusandae facere inventore asperiores incidunt vitae quae officia repellendus voluptas, impedit ullam nihil aut eaque maxime. Dolor
+				optio saepe corporis, quia accusamus sapiente aperiam dicta incidunt beatae aliquid placeat repellendus perferendis quasi quos quidem
+				possimus. Maxime nesciunt blanditiis voluptatibus, adipisci perspiciatis velit quisquam aperiam autem, maiores vitae aspernatur
+				aliquam, incidunt necessitatibus ex eveniet! Quae, molestiae vero, accusantium aspernatur sit in, praesentium quasi facere dolorem
+				sunt necessitatibus!
+			</p>
+		</div>
+		<img class="mask-img" src="stars.jpg" />
+	</body>
+</html>
